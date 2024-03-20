@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { FaPaintBrush } from "react-icons/fa";
 
@@ -11,32 +11,35 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-white shadow-md relative">
-      <div className="container mx-auto flex items-center justify-between py-4 px-8">
-        <h2 className="text-gray-800 md:text-2xl font-bold flex items-center gap-4">
+    <div className="relative bg-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between px-8 py-4">
+        <Link
+          to="/"
+          className="flex items-center gap-4 font-bold text-gray-800 md:text-2xl"
+        >
           React Color Palette Generator
-          <span className="text-red-600 cursor-pointer transition duration-300 ease-in-out hover:animate-bounce">
+          <span className="cursor-pointer text-red-600 transition duration-300 ease-in-out hover:animate-bounce">
             <FaPaintBrush />
           </span>
-        </h2>
-        <div className="hidden md:flex items-center gap-6">
+        </Link>
+        <div className="hidden items-center gap-6 md:flex">
           <NavLink
             to="/home"
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             Home
           </NavLink>
           <NavLink
             to="/generator"
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             Generator
           </NavLink>
           <NavLink
             to="/about"
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             About
@@ -47,24 +50,24 @@ const Navbar = () => {
         </button>
       </div>
       {show && (
-        <div className="md:hidden bg-gray-100 py-2 px-4 animate-slideIn absolute w-full">
+        <div className="animate-slideIn absolute w-full bg-gray-100 px-4 py-2 md:hidden">
           <NavLink
             to="/home"
-            className="block text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out py-2"
+            className="block py-2 text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             Home
           </NavLink>
           <NavLink
             to="/generator"
-            className="block text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out py-2"
+            className="block py-2 text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             Generator
           </NavLink>
           <NavLink
             to="/about"
-            className="block text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out py-2"
+            className="block py-2 text-gray-800 transition duration-300 ease-in-out hover:text-gray-600"
             activeClassName="text-red-600"
           >
             About

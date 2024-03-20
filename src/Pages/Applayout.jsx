@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const Applayout = () => {
   return (
-    <div className="container m-auto h-screen pt-4 px-2">
+    <div className=" h-screen pt-4 px-2">
       <Navbar />
-      <main className="">
+      <main className="container m-auto">
         <Outlet />
       </main>
     </div>
